@@ -4,3 +4,7 @@
 
 layout: home
 ---
+
+<p>
+    Welcome to my blog!
+</p>
