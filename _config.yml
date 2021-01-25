@@ -18,22 +18,23 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: Soobeen's Website
+email: soobeen.park@nhn.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+    Soobeen's Website
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  soobeenpark-w
+disqus_id: https-soobeenpark-w-github-io
+
 
 # Build settings
 theme: bay_jekyll_theme
 remote_theme: eliottvincent/bay
 plugins:
   - jekyll-feed
+kramdown:
+    parse_block_html: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -57,34 +58,21 @@ plugins:
 #
 
 header:
+    title: Soobeen Park
     pages:
         - name: Home
           slug: /
+        - name: About
         - name: Blog
-        - name: Whatever
 
 footer:
   show_powered_by: true
   contact:
     - name: Email
-      value: yourmail@domain.com
-      link: mailto:yourmail@domain.com
-    - name: WeChat
-      value: YourWeChatUsername
-      link: "#"
+      value: soobeen.park@nhn.com
+      link: mailto:soobeen.park@nhn.com
   follow:
-    - name: Twitter
-      link: http://twitter.com/YourTwitterUsername
-      username: "@YourTwitterUsername"
-    - name: Facebook
-      link: http://facebook.com/YourFacebookUsername
-    - name: LinkedIn
-      link: http://linkedin.com/in/YourLinkedInUsername
     - name: GitHub
-      link: http://github.com/YourGitHubUsername
-    - name: Dribbble
-      link: https://dribbble.com/YourDribbbleUsername
-    - name: Weibo
-      link: http://weibo.com/u/YourWeiboUsername
+      link: http://github.com/soobeenpark-w
     - name: RSS
       link: /feed.xml
