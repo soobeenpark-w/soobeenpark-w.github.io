@@ -41,22 +41,22 @@ int main(void)
 
 일단 `main()` 함수에서 `myarray` 배열을 생성한다. `populate_array()` 에서는 `myarray` 의 각 배열원소에 callback 함수인 `getNextValue()` 가 반환하는 값을 할당한다. 여기서, `getNextValue()` 매개변수는 호출할 때 인수로 쓴 `getNextRandomValue()` 를 사용하게 된다.
 
-Callback 패턴의 장점은 함수를 modular하게 구성해서 필요에 따라서 원하는 함수를 끼워맞춰서 사용할 수 있다는 점이다. 예를 들어서 새로운 배열 myarray2에는 `getNextRandomValue()` 를 사용하지 않고 다음과 같은 `getNextIncrValue()` 를 사용해서 배열원소에 값을 할당하고 싶다고 치자.
+Callback 패턴의 장점은 함수를 modular하게 구성해서 필요에 따라서 원하는 함수를 끼워맞춰서 사용할 수 있다는 점이다. 예를 들어서 새로운 배열 `myarray2`에는 `getNextRandomValue()` 를 사용하지 않고 다음과 같은 `getNextIncrValue()` 를 사용해서 배열원소에 값을 할당하고 싶다고 치자.
 
 ```c
 ...
 
 int getNextIncrValue(void)
 {
-	static int val = 0;
-	return val++;
+    static int val = 0;
+    return val++;
 }
 
 ...
 
 int main(void)
 {
-	int myarray[10];
+    int myarray[10];
     populate_array(myarray, 10, getNextRandomValue);
     int myarray2[10];
     populate_array(myarray, 10, getNextIncrValue);

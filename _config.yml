@@ -37,6 +37,7 @@ markdown: kramdown
 kramdown:
     syntax_highlighter: rouge
     input: GFM
+    hand_wrap: false
     parse_block_html: true
 
 # Exclude from processing.
