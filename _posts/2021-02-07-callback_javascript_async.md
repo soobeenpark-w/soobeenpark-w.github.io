@@ -119,7 +119,7 @@ setTimeout(bar, 1000);
 
 오잉, 이게 무슨 일인가??
 
-C 예제 코드에서는 foo가 먼저 출력되고 bar가 출력되었지만, JavaScript 예제 코드는 bar가 먼저 출력되고 foo가 이후에 출력된다.
+C 예제 코드에서는 foo가 먼저 출력되고 bar가 출력되었지만, 예상과 달리 JavaScript 예제 코드는 bar가 먼저 출력되고 foo가 이후에 출력된다.
  
 더 자세히 살펴보면, C 예제에서는 실행 후 2초 경과시점에 foo가 출력되고 3초 경과시점에 bar가 출력되는데, JavaScript 예제에서는 실행 후 1초 경과시점에 bar가 출력되고 2초 경과시점에 foo가 출력되는 것을 볼 수 있다. 즉, JavaScript에서는 `setTimeout(foo, 2000)` 이 끝날 때까지 기다린 후 `setTimeout(bar, 1000)` 이 실행 되는게 아니라, 마치 실행과 동시에 `setTimeout(foo, 2000)` 와 `setTimeout(bar, 1000)` 이 실행되는 것 같이 작동한다.
 
@@ -165,7 +165,7 @@ event loop와 task queue에 관한 자세한 내용은 <모던 자바스크립�
 
 # But why..? - Understanding event-driven programming
 
- 이제 우리는 JavaScript의 예제가 비동기적으로 진행되기 때문에 왜 C예제랑 다르게 작동하는지 알고 있다. 하지만 왜 JavaScript의 `setTimeout()` 는 어째서 비동기 형태로 실행되는 것일까?
+ 이제 우리는 JavaScript의 예제가 비동기적으로 진행되기 때문에 왜 C예제랑 다르게 작동하는지 알고 있다. 하지만 JavaScript의 `setTimeout()` 는 어째서 비동기 형태로 실행되는 것일까?
 
 이 해답을 찾으려면 JavaScript의 유래를 이해해야한다[7]. JavaScript는 애초에 브라우저에 동적인 기능을 추가하려고 탄생한 프로그래밍 언어이다. 브라우저 환경에서 동작하려면 비동기적으로 작동하는 것이 유리/필요하다. 브라우저에서 JavaScript가 어떤 방식으로 이용되는지 잘 생각해보자. 사용자와는 mouse 움직임, keyboard 타이핑과 같은 event를 처리하는데에 사용된다. 또, 서버로 ajax call을 하는 경우에도 서버와 네트워크 I/O로 통신을 하는데 사용된다. 즉, 브라우저는 본질적으로 I/O중심으로 작동한다.
 
