@@ -33,7 +33,10 @@ theme: bay_jekyll_theme
 remote_theme: eliottvincent/bay
 plugins:
   - jekyll-feed
+markdown: kramdown
 kramdown:
+    syntax_highlighter: rouge
+    input: GFM
     parse_block_html: true
 
 # Exclude from processing.
