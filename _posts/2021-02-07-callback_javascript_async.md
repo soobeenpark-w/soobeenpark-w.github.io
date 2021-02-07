@@ -155,6 +155,8 @@ C 예제 코드에서는 foo가 먼저 출력되고 bar가 출력되었지만, �
 
 C의 `sleep()` 함수는 주어진 delay만큼 프로세스를 중단해서 `sleep()`가 이루어지고 있는 도중에는 그 어떠한 코드도 실행되지 않는다. 이에 비해서, JavaScript의 `setTimeout()` 함수는 주어진 delay에 맞게 callback 함수를 task queue에 등록하는 것을 미룰뿐이지, 그 사이에 다른 코드가 기다리지 않고 실행된다. 이런식으로 코드가 비동기적으로 실행되는 것을 비동기적 프로그래밍 (asynchronous programming)이라고 부른다. `setTimeout()` 함수만 그런 것이 아니다. 그 외의 Web API에서 제공되는 `setInterval()` 함수, HTTP 요청, 이벤트 리서너는 모두 비동기 형태로 이루어진다.
 
+한가지 흥미로운 점은 JavaScript Engine은 단일 스레드로 작동한다는 점이다. 단일 스레드지만 비동기적 기능을 지원을 하려고 task queue와 event loop가 보조로 사용되는 것이다.
+
 event loop와 task queue에 관한 자세한 내용은 <모던 자바스크립트 Deep Dive (이웅모 지음)>[5] 책의 42장을 읽는 것과 [이 유튜브 영상](https://www.youtube.com/watch?v=8aGhZQkoFbQ)[6] 을 추천한다.
 
 <div class="container">
